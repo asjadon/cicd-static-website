@@ -23,7 +23,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker Image
-        run: docker build -t jadon3107/static-website .
+        run: docker build -t jadon3107/static-website:latest .
 
       - name: Push Docker Image
-        run: docker push jadon3107/static-website
+        run: docker push jadon3107/static-website:latest
