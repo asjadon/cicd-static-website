@@ -1,0 +1,23 @@
+---
+- name: Deploy Static Website Container
+  hosts: web
+  become: true
+
+  tasks:
+
+    - name: Install Docker
+      dnf:
+        name: docker
+        state: present
+
+    - name: Start Docker
+      service:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Pull Docker Image
+      command: docker pull jadon3107/static-website
+
+    - name: Run Docker Container
+      command: docker run -d -p 80:80 jadon3107/static-website

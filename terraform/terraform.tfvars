@@ -1,0 +1,5 @@
+aws_region          = "ap-south-1"
+ami_id              = "ami-0f559c3642608c138"
+instance_type       = "t2.micro"
+security_group_name = "launch-wizard-1"
+key_name            = "ansible-key"
